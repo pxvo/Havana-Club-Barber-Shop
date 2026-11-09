@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habana Club Barber Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="image_000561.png" alt="Habana Club Barber Shop Logo" class="logo-img">
+    </div>
+    <nav class="nav">
+      <a href="#services">Serviços</a>
+      <a href="#about">Sobre</a>
+      <a href="#location">Localização</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <img src="image_000561.png" alt="Habana Club Barber Shop" class="hero-logo">
+      <h1>HABANA CLUB BARBER SHOP</h1>
+      <p>Estilo, tradição e excelência em Boa Vista</p>
+      <a href="#services" class="btn">Ver Serviços</a>
+    </div>
+  </section>
+
+  <section id="services" class="services-section">
+    <h2>Nossos Serviços</h2>
+    
+    <div class="search-filter-container">
+      <input type="text" id="searchInput" placeholder="Buscar serviço..." onkeyup="filterServices()">
+      <div class="category-tabs">
+        <button class="tab-btn active" onclick="filterCategory('all', this)">Todos</button>
+        <button class="tab-btn" onclick="filterCategory('cabelo-barba', this)">Cabelo & Barba</button>
+        <button class="tab-btn" onclick="filterCategory('protese', this)">Prótese Capilar</button>
+        <button class="tab-btn" onclick="filterCategory('estetica-podologia', this)">Estética & Podologia</button>
+      </div>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+      <div class="service-card" data-category="cabelo-barba" data-name="barba">
+        <h3>Barba</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 60,00</p>
+        <button class="btn-book" onclick="openModal('Barba', 'R$ 60,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="barboterapia">
+        <h3>Barboterapia</h3>
+        <p class="duration">⏱ 60 min</p>
+        <p class="price">R$ 120,00</p>
+        <button class="btn-book" onclick="openModal('Barboterapia', 'R$ 120,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="botox realinhamento">
+        <h3>Botox (realinhamento)</h3>
+        <p class="duration">⏱ 60 min</p>
+        <p class="price">R$ 150,00</p>
+        <button class="btn-book" onclick="openModal('Botox (realinhamento)', 'R$ 150,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="cabelo barba depilacao nariz orelha skin care">
+        <h3>Cabelo + barba + depilação de nariz e orelha + Skin care</h3>
+        <p class="duration">⏱ 75 min</p>
+        <p class="price">R$ 220,00</p>
+        <button class="btn-book" onclick="openModal('Cabelo + barba + depilação + Skin care', 'R$ 220,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="cabelo e barba com pigmentacao">
+        <h3>Cabelo e Barba com pigmentação</h3>
+        <p class="duration">⏱ 60 min</p>
+        <p class="price">R$ 170,00</p>
+        <button class="btn-book" onclick="openModal('Cabelo e Barba com pigmentação', 'R$ 170,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="combo prince's day">
+        <h3>Combo prince's day</h3>
+        <p class="duration">⏱ 90 min</p>
+        <p class="price">R$ 250,00</p>
+        <button class="btn-book" onclick="openModal('Combo prince\'s day', 'R$ 250,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="consulta visagista visagismo">
+        <h3>Consulta Visagista</h3>
+        <p class="duration">⏱ 90 min</p>
+        <p class="price">R$ 650,00</p>
+        <button class="btn-book" onclick="openModal('Consulta Visagista', 'R$ 650,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte com pigmentacao">
+        <h3>Corte com pigmentação</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 85,00</p>
+        <button class="btn-book" onclick="openModal('Corte com pigmentação', 'R$ 85,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte de barba com pigmentacao">
+        <h3>Corte de barba com pigmentação</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 85,00</p>
+        <button class="btn-book" onclick="openModal('Corte de barba com pigmentação', 'R$ 85,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte degrade">
+        <h3>Corte degradê</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 60,00</p>
+        <button class="btn-book" onclick="openModal('Corte degradê', 'R$ 60,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte degrade c realinhamento">
+        <h3>Corte degrade c/ realinhamento</h3>
+        <p class="duration">⏱ 90 min</p>
+        <p class="price">A partir de R$ 210,00</p>
+        <button class="btn-book" onclick="openModal('Corte degrade c/ realinhamento', 'A partir de R$ 210,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte degrade e design de barba">
+        <h3>Corte degradê e design de barba</h3>
+        <p class="duration">⏱ 60 min</p>
+        <p class="price">R$ 120,00</p>
+        <button class="btn-book" onclick="openModal('Corte degradê e design de barba', 'R$ 120,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte degrade design de barba e sobrancelha">
+        <h3>Corte degradê, design de barba e sobrancelha</h3>
+        <p class="duration">⏱ 60 min</p>
+        <p class="price">R$ 145,00</p>
+        <button class="btn-book" onclick="openModal('Corte degradê, design de barba e sobrancelha', 'R$ 145,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte e design de sobrancelha">
+        <h3>Corte e design de sobrancelha</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 85,00</p>
+        <button class="btn-book" onclick="openModal('Corte e design de sobrancelha', 'R$ 85,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte estilo americano">
+        <h3>Corte estilo Americano</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 60,00</p>
+        <button class="btn-book" onclick="openModal('Corte estilo Americano', 'R$ 60,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte infantil">
+        <h3>Corte Infantil</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 60,00</p>
+        <button class="btn-book" onclick="openModal('Corte Infantil', 'R$ 60,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte mullet">
+        <h3>Corte Mullet</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 60,00</p>
+        <button class="btn-book" onclick="openModal('Corte Mullet', 'R$ 60,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte old money">
+        <h3>Corte old money</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 80,00</p>
+        <button class="btn-book" onclick="openModal('Corte old money', 'R$ 80,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte social">
+        <h3>Corte social</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 60,00</p>
+        <button class="btn-book" onclick="openModal('Corte social', 'R$ 60,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte social e design de barba">
+        <h3>Corte social e design de barba</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 120,00</p>
+        <button class="btn-book" onclick="openModal('Corte social e design de barba', 'R$ 120,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte social ou degrade para usuario de protese capilar">
+        <h3>Corte Social ou Degradê para usuário de prótese capilar</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 80,00</p>
+        <button class="btn-book" onclick="openModal('Corte Social ou Degradê para prótese', 'R$ 80,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="corte social design de barba e sobrancelha">
+        <h3>Corte social, design de barba e sobrancelha</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 145,00</p>
+        <button class="btn-book" onclick="openModal('Corte social, design de barba e sobrancelha', 'R$ 145,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="cupom">
+        <h3>CUPOM</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 0,00</p>
+        <button class="btn-book" onclick="openModal('CUPOM', 'R$ 0,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="debaste plantar calosidade">
+        <h3>Debaste Plantar ( Calosidade )</h3>
+        <p class="duration">⏱ 60 min</p>
+        <p class="price">R$ 100,00</p>
+        <button class="btn-book" onclick="openModal('Debaste Plantar', 'R$ 100,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="depilacao de nariz">
+        <h3>Depilação de nariz</h3>
+        <p class="duration">⏱ 15 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Depilação de nariz', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="depilacao de orelha">
+        <h3>Depilação de orelha</h3>
+        <p class="duration">⏱ 15 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Depilação de orelha', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="design de sobrancelha">
+        <h3>Design de sobrancelha</h3>
+        <p class="duration">⏱ 15 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Design de sobrancelha', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="diversos">
+        <h3>Diversos</h3>
+        <p class="duration">⏱ 15 min</p>
+        <p class="price">R$ 50,00</p>
+        <button class="btn-book" onclick="openModal('Diversos', 'R$ 50,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="drenagem l corporal">
+        <h3>Drenagem L corporal</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 180,00</p>
+        <button class="btn-book" onclick="openModal('Drenagem L corporal', 'R$ 180,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="drenagem l facial">
+        <h3>Drenagem L facial</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 140,00</p>
+        <button class="btn-book" onclick="openModal('Drenagem L facial', 'R$ 140,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="esmaltacao em gel">
+        <h3>Esmaltação em gel</h3>
+        <p class="duration">⏱ 60 min</p>
+        <p class="price">R$ 100,00</p>
+        <button class="btn-book" onclick="openModal('Esmaltação em gel', 'R$ 100,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="espiculectomia tratamento de unha encravada">
+        <h3>Espiculectomia ( unha encravada )</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">A partir de R$ 100,00</p>
+        <button class="btn-book" onclick="openModal('Espiculectomia', 'A partir de R$ 100,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="hidratacao">
+        <h3>Hidratação</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 100,00</p>
+        <button class="btn-book" onclick="openModal('Hidratação', 'R$ 100,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="limpeza de pele">
+        <h3>Limpeza de pele</h3>
+        <p class="duration">⏱ 60 min</p>
+        <p class="price">R$ 150,00</p>
+        <button class="btn-book" onclick="openModal('Limpeza de pele', 'R$ 150,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="luzes">
+        <h3>Luzes</h3>
+        <p class="duration">⏱ 150 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Luzes', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="manicure">
+        <h3>Manicure</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 50,00</p>
+        <button class="btn-book" onclick="openModal('Manicure', 'R$ 50,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="manicure e pedicure">
+        <h3>Manicure e Pedicure</h3>
+        <p class="duration">⏱ 60 min</p>
+        <p class="price">R$ 100,00</p>
+        <button class="btn-book" onclick="openModal('Manicure e Pedicure', 'R$ 100,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="protese" data-name="manutencao de protese capilar">
+        <h3>Manutenção de Prótese Capilar</h3>
+        <p class="duration">⏱ 60 min</p>
+        <p class="price">R$ 140,00</p>
+        <button class="btn-book" onclick="openModal('Manutenção de Prótese Capilar', 'R$ 140,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="protese" data-name="manutencao de protese capilar e corte de cabelo">
+        <h3>Manutenção de Prótese Capilar e corte</h3>
+        <p class="duration">⏱ 75 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Manutenção de Prótese Capilar e corte', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="protese" data-name="manutencao de protese capilar e pigmentacao">
+        <h3>Manutenção de Prótese Capilar e pigmentação</h3>
+        <p class="duration">⏱ 75 min</p>
+        <p class="price">R$ 170,00</p>
+        <button class="btn-book" onclick="openModal('Manutenção de Prótese Capilar e pigmentação', 'R$ 170,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="protese" data-name="manutencao de protese capilar corte de cabelo e design de barba">
+        <h3>Manutenção Prótese, Corte e Barba</h3>
+        <p class="duration">⏱ 90 min</p>
+        <p class="price">R$ 240,00</p>
+        <button class="btn-book" onclick="openModal('Manutenção Prótese, Corte e Barba', 'R$ 240,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="protese" data-name="manutencao de protese capilar corte de cabelo e pigmentacao">
+        <h3>Manutenção Prótese, Corte e Pigmentação</h3>
+        <p class="duration">⏱ 90 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Manutenção Prótese, Corte e Pigmentação', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="protese" data-name="manutencao de protese capilar corte de cabelo design de barba e pigmentacao">
+        <h3>Manutenção Prótese, Corte, Barba e Pigmentação</h3>
+        <p class="duration">⏱ 75 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Manutenção Prótese, Corte, Barba e Pigmentação', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="protese" data-name="manutencao de protese com maydel escalona">
+        <h3>Manutenção de Prótese c/ Maydel Escalona</h3>
+        <p class="duration">⏱ 90 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Manutenção c/ Maydel Escalona', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="protese" data-name="mini protese capilar">
+        <h3>Mini Prótese Capilar</h3>
+        <p class="duration">⏱ 60 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Mini Prótese Capilar', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="pedicure">
+        <h3>Pedicure</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 50,00</p>
+        <button class="btn-book" onclick="openModal('Pedicure', 'R$ 50,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="platinado">
+        <h3>Platinado</h3>
+        <p class="duration">⏱ 150 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Platinado', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="podologia">
+        <h3>Podologia</h3>
+        <p class="duration">⏱ 90 min</p>
+        <p class="price">A partir de R$ 100,00</p>
+        <button class="btn-book" onclick="openModal('Podologia', 'A partir de R$ 100,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="protese" data-name="protese capilar">
+        <h3>Prótese Capilar</h3>
+        <p class="duration">⏱ 75 min</p>
+        <p class="price">R$ 650,00</p>
+        <button class="btn-book" onclick="openModal('Prótese Capilar', 'R$ 650,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="realinhamento corte degrade e barba">
+        <h3>Realinhamento + corte degrade e barba</h3>
+        <p class="duration">⏱ 90 min</p>
+        <p class="price">R$ 270,00</p>
+        <button class="btn-book" onclick="openModal('Realinhamento + corte degrade e barba', 'R$ 270,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="realinhamento">
+        <h3>Realinhamento</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 150,00</p>
+        <button class="btn-book" onclick="openModal('Realinhamento', 'R$ 150,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="realinhamento liso americano">
+        <h3>Realinhamento Liso americano</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Realinhamento Liso americano', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="reflexologia">
+        <h3>Reflexologia</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 180,00</p>
+        <button class="btn-book" onclick="openModal('Reflexologia', 'R$ 180,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="skin care">
+        <h3>Skin care</h3>
+        <p class="duration">⏱ 15 min</p>
+        <p class="price">Sob Consulta</p>
+        <button class="btn-book" onclick="openModal('Skin care', 'Sob Consulta')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="spa dos pes">
+        <h3>Spa dos pés</h3>
+        <p class="duration">⏱ 30 min</p>
+        <p class="price">R$ 150,00</p>
+        <button class="btn-book" onclick="openModal('Spa dos pés', 'R$ 150,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="undercut">
+        <h3>Undercut</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 120,00</p>
+        <button class="btn-book" onclick="openModal('Undercut', 'R$ 120,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="estetica-podologia" data-name="ventosaterapia">
+        <h3>Ventosaterapia</h3>
+        <p class="duration">⏱ 45 min</p>
+        <p class="price">R$ 180,00</p>
+        <button class="btn-book" onclick="openModal('Ventosaterapia', 'R$ 180,00')">Agendar</button>
+      </div>
+      <div class="service-card" data-category="cabelo-barba" data-name="visagismo">
+        <h3>Visagismo</h3>
+        <p class="duration">⏱ 90 min</p>
+        <p class="price">R$ 650,00</p>
+        <button class="btn-book" onclick="openModal('Visagismo', 'R$ 650,00')">Agendar</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="location" class="location-section">
+    <h2>Nossa Localização</h2>
+    <p>Avenida Capitão Júlio Bezerra, 1458 - Nossa Senhora Aparecida - Boa Vista/RR</p>
+    <div class="map-container">
+      <iframe src="https://maps.google.com/maps?q=Avenida%20Capit%C3%A3o%20J%C3%BAlio%20Bezerra%201458%20Boa%20Vista%20RR&t=&z=15&ie=UTF-8&iwloc=&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Agendar Serviço</h2>
+      <p id="modalServiceName" class="highlight-text"></p>
+      <p id="modalServicePrice" class="price-text"></p>
+      
+      <form id="bookingForm" onsubmit="sendWhatsApp(event)">
+        <label for="clientName">Seu Nome:</label>
+        <input type="text" id="clientName" required placeholder="Digite seu nome">
+        
+        <label for="bookingDate">Data desejada:</label>
+        <input type="date" id="bookingDate" required>
+        
+        <label for="bookingTime">Horário preferencial:</label>
+        <input type="time" id="bookingTime" required>
+        
+        <button type="submit" class="btn btn-full">Confirmar no WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
